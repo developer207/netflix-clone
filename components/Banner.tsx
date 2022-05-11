@@ -3,7 +3,8 @@ import { Movie } from '../interfaces'
 import Image from 'next/Image'
 import styles from '../styles/Banner.module.css'
 import { FaPlay } from 'react-icons/fa'
-import {IoMdInformationCircleOutline} from 'react-icons/io'
+import { IoMdInformationCircleOutline } from 'react-icons/io'
+
 import Model from './Model'
 
 interface props{
