@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Movie } from '../interfaces'
-import Image from 'next/Image'
+import Image from 'next/image'
 import styles from '../styles/Banner.module.css'
 import { FaPlay } from 'react-icons/fa'
 import { IoMdInformationCircleOutline } from 'react-icons/io'
