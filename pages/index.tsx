@@ -1,4 +1,4 @@
-import type { NextPage } from 'next'
+
 import Head from 'next/head'
 import Banner from '../components/Banner'
 import Navbar from '../components/Navbar'
@@ -26,7 +26,7 @@ const Home = ({ trendingMovies }: props) => {
           <Row title={"Trending Movies"} movie={trendingMovies}/>
           <Row title={"Trending Movies"} movie={trendingMovies}/>
           <Row title={"Trending Movies"} movie={trendingMovies}/>
-          <Row title={"Trending Movies"} movie={trendingMovies} />
+          <Row title={"Trending Movies"} movie={trendingMovies}/>
           <Row title={"Trending Movies"} movie={trendingMovies}/>
           <Row title={"Trending Movies"} movie={trendingMovies}/>
           <Row title={"Trending Movies"} movie={trendingMovies}/>

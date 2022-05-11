@@ -1,6 +1,6 @@
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/outline'
 
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Movie } from '../interfaces'
 import Thumble from './Thumble'
 interface props {
@@ -21,7 +21,11 @@ const Row = ({ title, movie }: props) => {
             const scrollTo = direction === "left" ? scrollLeft - clientWidth : clientWidth + scrollLeft
             rowRef.current.scrollTo({ left: scrollTo, behavior: 'smooth' })
         }
-        if(direction==="right")setIsMoved(1)
+        if (direction === "right") setIsMoved(1)
+        
+        useEffect(() => {
+            console.log("use Effect works properly")
+        })
     }
     return (
         <div className='group relative'>

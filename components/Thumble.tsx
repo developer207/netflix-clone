@@ -31,6 +31,7 @@ const Thumble = ({ movie }: props) => {
                 className='object-cover rounded-sm'
                 onClick={() => {
                     setShow(true)
+                    console.log("ashok")
                    
                 }}
              />
