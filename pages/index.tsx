@@ -13,7 +13,7 @@ const Home = ({ trendingMovies }: props) => {
   return (
     <div className="relative h-screen bg-gradient-to-b from-gray-900/10 to-[#010512] lg:h-[155vh]">
       <Head>
-        <title>Create Next App</title>
+        <title>Home - Netflix</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -52,4 +52,6 @@ export const getServerSideProps = async () => {
     }
   }
 }
+
+
 

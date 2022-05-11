@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import styles from '../styles/navbar.module.css'
 import { BellIcon, SearchIcon } from '@heroicons/react/solid'
 import Link from 'next/link'
+import { AuthContext } from '../context/AuthContext'
 
 const Navbar = () => {
     const [isScrolle, setIsScrolle] = useState(false);
+    const {logout}=useContext(AuthContext)
 
 
     useEffect(() => {
@@ -40,13 +42,14 @@ const Navbar = () => {
                 <SearchIcon className='hidden sm:inline h-6 w-6' />
                 <p>children</p>
                 <BellIcon className='h-6 w-6' />
-                <Link href={"/account"}>
+                
                     <img
                         src="https://rb.gy/g1pwyx"
                         alt=""
-                        className="cursor-pointer rounded"
+                    className="cursor-pointer rounded"
+                    onClick={logout}
                     />
-                </Link>
+                
 
             </div>
         </div>

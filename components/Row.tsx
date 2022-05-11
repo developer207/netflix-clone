@@ -43,6 +43,8 @@ const Row = ({ title, movie }: props) => {
                 {movie.map((item) => {
                     return <Thumble movie={item}
                         key={item.id}
+                        
+                    
                     />
                 })}
 
