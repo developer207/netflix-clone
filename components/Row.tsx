@@ -13,7 +13,7 @@ const Row = ({ title, movie }: props) => {
     const [isMoved, setIsMoved] = useState(0)
 
     const handleClick = (direction: String) => {
-       
+
         if (rowRef.current) {
             const { scrollLeft, clientWidth } = rowRef.current
             setIsMoved(scrollLeft)
@@ -22,10 +22,8 @@ const Row = ({ title, movie }: props) => {
             rowRef.current.scrollTo({ left: scrollTo, behavior: 'smooth' })
         }
         if (direction === "right") setIsMoved(1)
-        
-        useEffect(() => {
-            console.log("use Effect works properly")
-        })
+
+
     }
     return (
         <div className='group relative'>
@@ -44,11 +42,11 @@ const Row = ({ title, movie }: props) => {
 
             <div ref={rowRef} className='flex overflow-y-scroll space-x-2 scrollbar-hide z-0'>
 
-                {movie.map((item) => {
+                {movie?.map((item) => {
                     return <Thumble movie={item}
                         key={item.id}
-                        
-                    
+
+
                     />
                 })}
 
