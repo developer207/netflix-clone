@@ -37,6 +37,7 @@ const Home = ({
       <Head>
         <title>Home - Netflix</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"></meta>
       </Head>
 
       <Navbar />
