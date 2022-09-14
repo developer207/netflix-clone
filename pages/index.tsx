@@ -41,10 +41,10 @@ const Home = ({
       </Head>
 
       <Navbar />
-      <main className='relative pl-5 lg:pl-8 space-y-32'>
+      <main className='relative pl-5 lg:pl-8 space-y-32 overflow-x-hidden'>
         <Banner trendingMovies={trendingNow} />
 
-        <section className='space-y-5 lg:space-y-10'>
+        <section className='space-y-5 lg:space-y-10 '>
           <Row title={"Trending Movies"} movie={trendingNow} />
           
           <Row title={"Action Movies"} movie={comedyMovies} />
