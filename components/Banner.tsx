@@ -53,8 +53,13 @@ const Banner = ({ trendingMovies }: props) => {
       <p className='max-w-xs text-sm md:max-w-lg md:text-lg lg:max-w-2xl lg:text-2xl'>{movie?.overview}</p>
 
       <div className='flex w-56 justify-between md:w-72 lg:w-96'>
-        <button className={`${styles.buttons} bg-white text-black`}><FaPlay className='text-gray-900 text-lg md:text-xl lg:text-3xl ' /> Play</button>
-        <button onClick={() => setShow(true)} className={`${styles.buttons} bg-gray-400`}><IoMdInformationCircleOutline className='text-white text-lg md:text-xl lg:text-4xl ' /> More Info</button>
+        <button
+          onClick={() => {
+            setShow(true)
+            console.log('setShowtrue')
+          }}
+          className={`${styles.buttons} bg-white text-black`}><FaPlay className='text-gray-900 text-lg md:text-xl lg:text-3xl ' /> Play</button>
+        <button className={`${styles.buttons} bg-gray-400`}><IoMdInformationCircleOutline className='text-white text-lg md:text-xl lg:text-4xl ' /> More Info</button>
       </div>
 
       <Model show={show} handleClose={handleClose} trailer={trailer} movie={movie} singleMovie={singleMovie} />
