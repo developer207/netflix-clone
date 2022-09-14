@@ -25,7 +25,7 @@ const Model = ({ show, handleClose, trailer, movie, singleMovie }: prop) => {
 
 
     const handleList = () => {
-        console.log("handleList")
+       
     }
 
     return (

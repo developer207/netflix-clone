@@ -6,14 +6,14 @@ import { AuthContext } from '../context/AuthContext'
 
 const Navbar = () => {
     const [isScrolle, setIsScrolle] = useState(false);
-    const {logout}=useContext(AuthContext)
+    const {logout, user}=useContext(AuthContext)
 
 
     useEffect(() => {
         const handleScroll = () => {
             if (window.scrollY > 0) setIsScrolle(true)
             else setIsScrolle(false)
-            console.log("scrolled")
+            
         }
 
         window.addEventListener("scroll", handleScroll);
@@ -43,12 +43,22 @@ const Navbar = () => {
                 <p>children</p>
                 <BellIcon className='h-6 w-6' />
                 
+                <div className='group relative'>
                     <img
                         src="https://rb.gy/g1pwyx"
                         alt=""
                     className="cursor-pointer rounded"
-                    onClick={logout}
+                    
                     />
+                    <div className='absolute right-0 hidden group-hover:block space-y-1 p-5  bg-slate-700'>
+                       <p className=' p-3  '>{user?.email?.split("@")[0]}</p>
+                        <p
+                            onClick={logout}
+                            className='p-3 cursor-pointer hover:bg-slate-600 rounded-md'>Logout</p> 
+                    </div>
+                    
+                </div>
+                    
                 
 
             </div>

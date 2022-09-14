@@ -5,7 +5,7 @@ import Login from '../components/Login'
 const login = () => {
   return (
     <div>
-      <Login/>
+      <Login buttonName='Login' cardName='Sign In'/>
           
 
     </div>

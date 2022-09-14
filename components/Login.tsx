@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 import React, { useContext } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { AuthContext } from '../context/AuthContext'
@@ -9,16 +10,26 @@ interface Inputs{
   password:string
 }
 
-const Login = () => {
-  const {signIn , user}=useContext(AuthContext)
+interface props{
+  buttonName: string,
+  cardName:string
+}
 
-  const { register, handleSubmit,  formState: { errors } } = useForm<Inputs>();
-  const onSubmit: SubmitHandler<Inputs> = data => {
+const Login = ({buttonName, cardName}:props) => {
+  const { signIn, signUp, user } = useContext(AuthContext)
+  const router = useRouter();
+
+  const { register, handleSubmit, formState: { errors } } = useForm<Inputs>();
+  
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
 
     console.log(data)
 
-    signIn(data.email, data.password)
-    console.log("user",user)
+    
+    if (buttonName == "Signup") signUp(data.email, data.password)
+    else signIn(data.email, data.password)
+    
+    console.log("user----",user)
   };
   
 
@@ -34,11 +45,12 @@ const Login = () => {
         className="-z-10 !hidden opacity-60 sm:!inline absolute"
         objectFit="cover"
       />
-     
-      <form
+      <div className='bg-black/75  left-10 top-20 lg:left-[36%] lg:top-[22%] relative w-80 p-3 lg:p-14 space-y-3  lg:w-[30rem]'>
+        <form
+          className='space-y-5'
         onSubmit={handleSubmit(onSubmit)}
-        className='bg-black/75  left-10 top-20 lg:left-[36%] lg:top-[22%] relative w-80 p-3 lg:p-14 space-y-5 lg:w-[30rem]'>
-        <h1 className='font-semibold text-3xl'>Sign In</h1>
+        >
+        <h1 className='font-semibold text-3xl'>{cardName}</h1>
                 <div className='opacity-100'>
           <input
             type="email"
@@ -58,14 +70,21 @@ const Login = () => {
           {errors.password && <span className='text-sm text-orange-700 font-semibold'>This field is required</span>}
           
         </div>
-        <button type='submit' className='w-full bg-[#e50914] p-3 rounded'>Login</button>
-        <div className='flex'>
-          <li className='list-none text-[grey]'>New To Netflix ? </li>  <button className='hover:underline ml-2'>Sign Up</button>
-        </div>
+          <button type='submit' className='w-full bg-[#e50914] p-3 rounded'>{buttonName}</button>
+       
               
                 
                 
-            </form>
+        </form>
+        <div className='flex'>
+          <li className='list-none text-[grey]'>New To Netflix ? </li>  <button
+            onClick={()=>{buttonName=="Signup"?router.push("/login"):router.push("/signup")}}
+            className='hover:underline ml-2'>{buttonName=="Signup"?"Login":"Signup"}</button>
+        </div>
+
+     </div>
+     
+      {/*  */}
     </div>
   )
 }

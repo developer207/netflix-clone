@@ -1,8 +1,9 @@
-
+import {useContext} from "react"
 import Head from 'next/head'
 import Banner from '../components/Banner'
 import Navbar from '../components/Navbar'
 import Row from '../components/Row'
+import { AuthContext } from '../context/AuthContext'
 import { Movie } from '../interfaces'
 
 interface props {
@@ -29,6 +30,8 @@ const Home = ({
   documentaries,
   animation,
   populer }: props) => {
+  
+  
   return (
     <div className="relative h-screen bg-gradient-to-b from-gray-900/10 to-[#010512] lg:h-[155vh]">
       <Head>

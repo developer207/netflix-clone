@@ -27,7 +27,7 @@ const Thumble = ({ movie }: props) => {
 
             const data = await res.json();
             setSingleMovie(data)
-            console.log("data", data)
+            
         }
         fetchData();
     }, [movie])
@@ -50,7 +50,7 @@ const Thumble = ({ movie }: props) => {
 
                             const data = await res.json();
                             data ? setTrailer(data.videos?.results[0]?.key) : ""
-                            console.log(data)
+                           
                         }
                         fetchData();
                     }}
